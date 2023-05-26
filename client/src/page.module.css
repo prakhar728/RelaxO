@@ -1,0 +1,109 @@
+.landingWrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.landingContent {
+  width: 100vw;
+  height: 100%;
+  background-image: url('./assets/bg6.jpg');
+  background-size: cover;
+  padding:0 20vw;
+}
+.nav {
+  min-height: 10%;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logoWrapper {
+  width: fit-content;
+}
+.logoImage {
+  height: 10vh;
+}
+.navButton {
+  font-size: 24px;
+  padding: 1vh 2vw;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  border-radius: 24px;
+}
+
+.navButton {
+  border: 1px solid white;
+  z-index: 1;
+  border-radius: 24px;
+
+}
+.navButton:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 24px;
+
+}
+.navButton:hover {
+  color: black;
+}
+.navButton:hover:after {
+  left: 0;
+  width: 100%;
+}
+.navButton:active {
+  top: 2px;
+}
+
+.bannerContent{
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    align-items: center;
+    height: 60%;
+    padding:0 2vw;
+}
+.bannerH2{
+    font-size: 72px;
+    width: 30vw;
+    text-align: justify;
+    
+}
+.bannerH4{
+    font-size: 24px;
+    width: 30vw;
+    color:rgb(201, 197, 197);
+}
+.features{
+    height:40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.featureCard{
+    width: 25%;
+    height:90%;
+    background-color: rgba(0, 0, 0, 0.856);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.featureCard img{
+  width: 70%;
+}

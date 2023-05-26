@@ -1,0 +1,63 @@
+.loginBackground{
+    background-image: url("../assets/bg2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.loginWrapper{
+    width: 60%;
+    margin:auto;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginMain{
+    border:1px solid #A661FF;
+    width: 60%;
+    color:black;
+    font-size: 18px;
+    border-radius: 16px;
+    padding:2vh 4vw;
+    height:40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(80px);
+
+    color:white
+}
+.loginMain form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.loginMain form label{
+    width: 80%;
+    font-size: 30px;
+}
+.loginMain form input{
+    border:1px solid #A661FF;
+    align-items: center;
+    background-color: transparent;
+    width: 80%;
+    font-size: 24px;
+    padding:1vh 2px;
+    border-radius: 8px;
+
+}
+.loginMain form button{
+    border-radius: 50%;
+    border: none;
+    background-color: #CBA3FF;
+    padding:4px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginMain form button img{
+    border:none;
+    margin:2px;
+}
