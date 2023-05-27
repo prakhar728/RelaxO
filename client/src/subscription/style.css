@@ -1,0 +1,62 @@
+.subscriptionWrapper{
+    width: 100vw;
+    height:100vh;
+    background-image: url('../assets/subscriptionListBg.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.subscriptionMainContent{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+.subscriptionMainContent h2{
+    border:1px solid #a561ff78;
+    width: 40%;
+    text-align: center;
+    padding:2vh 0;
+    border-radius: 8px;
+    background-image: linear-gradient(to right,rgba(127, 82, 128, 0.353),#a561ff3a,#a561ff3b);
+}
+.subscriptionInfo{
+    border:1px solid #A661FF;
+    width: 80%;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    height:30%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.infoWrappare{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+}
+.infoWrappare div{
+    border: 1px solid #A661FF;
+    font-size: 14px;
+    width: 20%;
+    padding:1vh 2px;
+    border-radius: 8px;
+}
+.buttonWrapper{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.buttonWrapper button{
+    font-size: 16px;
+    border:none;
+    outline:none;
+    padding: 1vh 4vw;
+    border-radius: 24px;
+    background-image: linear-gradient(to right,#A661FF,#9244A7,#812B58);
+    cursor: pointer;
+}

@@ -7,8 +7,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Login from './login/Login.tsx';
-import Dashboard from './dashboard/Dashboard.tsx';
+import Subscription from "./subscription/Subscription.tsx"
 import Creator from './creator/Creator.tsx';
+import Subscriptions from './subscriptions/Subscriptions.tsx';
 
 const router = createBrowserRouter([
   {
@@ -20,12 +21,16 @@ const router = createBrowserRouter([
     element:<Login />
   },
   {
-    path:"/app/dashboard",
-    element:<Dashboard />
-  },
-  {
     path:"/app/creator",
     element:<Creator />
+  },
+  {
+    path:"/app/subscriptions",
+    element:<Subscriptions />
+  },
+  {
+    path:"/app/subscription/:id",
+    element:<Subscription />
   }
 ]);
 

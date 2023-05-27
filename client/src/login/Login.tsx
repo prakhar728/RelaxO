@@ -19,7 +19,7 @@ const Login = () => {
   // const notify = () => toast("Wow so easy!");
   useEffect(() => {
     if (loggedIn) {
-      navigate('/app/dashboard')
+      navigate('/app/subscriptions')
     }
   }, [loggedIn])
 

@@ -1,0 +1,29 @@
+.sideNavWrapper{
+    position: absolute;
+    height: 100%;
+    width: 10vw;
+    background-image: linear-gradient( #a561ff30 , #9244a720, #812b571b);;
+    backdrop-filter: blur(10px);
+
+}
+.linkHolder{
+   margin-top: 10vh;
+    height:30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+.linkHolderInner{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid #A661FF;
+    padding:4px 4px;
+    border-radius: 8px;
+}
+.linkHolderInner img{
+    width: 20%;
+}

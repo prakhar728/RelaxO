@@ -5,6 +5,7 @@ import {Magic} from "magic-sdk";
 import {ethers} from "ethers";
 import axios from 'axios';
 import {baseURL} from "../Common"
+import SideNAv from '../sideNav/SideNav';
 // import mockTokenAddress from "../assets/contractData/MockToken-address.json";
 // import mockTokenABI from "../assets/contractData/MockToken.json";
 // const PUBLIC_KEY = process.env.REACT_APP_PUBLISH_KEY|| "";
@@ -63,6 +64,7 @@ const Creator =  () => {
     
   return (
     <div className="CreatorWrapper">
+        <SideNAv />
         <div className='creatorNavbar'>
             <div>{useraddress} <span>Balance:{balance}</span></div>
         </div>
