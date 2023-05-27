@@ -10,7 +10,7 @@ const Login = () => {
     rpcUrl: "https://rpc.testnet.mantle.xyz", 
     chainId: 5001 
   }
-  const magic = new Magic(process.env.REACT_APP_PUBLISH_KEY,
+  const magic = new Magic("pk_live_011429E8F4B976DA",
     { network: customNodeOptions });
 
   const navigate = useNavigate();

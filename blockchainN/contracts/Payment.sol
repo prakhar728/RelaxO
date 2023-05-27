@@ -56,36 +56,36 @@ contract Payment {
     nextPlanId++;
   }
 
-  function subscribe(uint planId) external {
+  function subscribe(address _subscriber,uint planId) external {
     IERC20 token = IERC20(plans[planId].token);
     Plan storage plan = plans[planId];
     require(plan.merchant != address(0), 'this plan does not exist');
 
-    token.transferFrom(msg.sender, plan.merchant, plan.amount);  
+    token.transferFrom(_subscriber, plan.merchant, plan.amount);  
     emit PaymentSent(
-      msg.sender, 
+      _subscriber, 
       plan.merchant, 
       plan.amount, 
       planId, 
       block.timestamp
     );
 
-    subscriptions[msg.sender][planId] = Subscription(
-      msg.sender, 
+    subscriptions[_subscriber][planId] = Subscription(
+      _subscriber, 
       block.timestamp, 
       block.timestamp + plan.frequency
     );
-    emit SubscriptionCreated(msg.sender, planId, block.timestamp);
+    emit SubscriptionCreated(_subscriber, planId, block.timestamp);
   }
 
-  function cancel(uint planId) external {
-    Subscription storage subscription = subscriptions[msg.sender][planId];
+  function cancel(address _subscriber, uint planId) external {
+    Subscription storage subscription = subscriptions[_subscriber][planId];
     require(
       subscription.subscriber != address(0), 
       'this subscription does not exist'
     );
-    delete subscriptions[msg.sender][planId]; 
-    emit SubscriptionCancelled(msg.sender, planId, block.timestamp);
+    delete subscriptions[_subscriber][planId]; 
+    emit SubscriptionCancelled(_subscriber, planId, block.timestamp);
   }
 
   function pay(address subscriber, uint planId) external {

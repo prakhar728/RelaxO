@@ -3,14 +3,22 @@ import './style.css';
 import arrow from "../assets/arrow.svg";
 import {Magic} from "magic-sdk";
 import {ethers} from "ethers";
-const magic = new Magic(process.env.REACT_APP_PUBLISH_KEY);
+import axios from 'axios';
+import {baseURL} from "../Common"
+// import mockTokenAddress from "../assets/contractData/MockToken-address.json";
+// import mockTokenABI from "../assets/contractData/MockToken.json";
+// const PUBLIC_KEY = process.env.REACT_APP_PUBLISH_KEY|| "";
+
+const magic = new Magic("pk_live_011429E8F4B976DA");
+console.log(magic.rpcProvider);
+
 const provider = new ethers.BrowserProvider(magic.rpcProvider);
 
 const signer = await provider.getSigner();
-console.log(await signer.getAddress());
 
 const Creator =  () => {
-    const [useraddress, setuseraddress] = useState("asdad")
+    const [useraddress, setuseraddress] = useState("asdad");
+    const [balance, setbalance] = useState(0)
     const [planData, setplanData] = useState({
         mA:"",
         tA:"",
@@ -20,9 +28,33 @@ const Creator =  () => {
     const getTheAddress = async() =>{
         setuseraddress(await signer.getAddress())
     }
+    const getTheBalance = async()=>{
+        axios.post(`${baseURL}/Balance`,{
+            userAddress:useraddress
+        })
+        .then((res)=>{
+            console.log(res.data);
+            setbalance(res.data)
+            
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }
+    useEffect(() => {
+    getTheBalance();
+    }, [useraddress])
+    
+    // const getUserBalance = async() =>{
+    //     if(useraddress)
+    //     setbalance(await contract.balanceOf(useraddress));
+    // }
     useEffect( () => {
         getTheAddress();
       }, [signer])
+    //   useEffect( () => {
+    //     getUserBalance();
+    //   }, [contract])
     const createPlan = () =>{
         console.log('Creating Plan');
         
@@ -32,7 +64,7 @@ const Creator =  () => {
   return (
     <div className="CreatorWrapper">
         <div className='creatorNavbar'>
-            <div>{useraddress} <span>Balance:1000</span></div>
+            <div>{useraddress} <span>Balance:{balance}</span></div>
         </div>
         <div className="creatorMain">
             <h2 className='creatorHeading'>

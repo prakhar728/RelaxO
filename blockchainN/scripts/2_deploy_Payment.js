@@ -18,8 +18,7 @@ async function main() {
   const payment = await Payment.deploy();
 
   const tx = await payment.deployed();
-  console.log(tx);
-  saveFiles(payment,"Payments");
+  saveFiles(payment,"Payment");
   console.log("Payments Contract deployed to:", payment.address);
 }
 
